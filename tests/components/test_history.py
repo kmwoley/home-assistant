@@ -56,7 +56,7 @@ class TestComponentHistory(unittest.TestCase):
         self.init_recorder()
         states = []
 
-        now = dt_util.utcnow()
+        now = dt_util.utcnow() - timedelta(seconds=1)
         with patch('homeassistant.components.recorder.dt_util.utcnow',
                    return_value=now):
             for i in range(5):
